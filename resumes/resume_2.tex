@@ -1,0 +1,177 @@
+%-------------------------
+% Resume in LaTeX
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%-------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\linespread{1.05}
+% Stretch flexible glue so content fills the page exactly (no bottom whitespace)
+\flushbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+% Flexible space before/after section titles (stretches to fill the page)
+\titlespacing*{\section}{0pt}{2pt plus 14pt}{6pt plus 4pt}
+
+% Ensure that generated PDF is machine-readable / ATS-parsable
+\ifPDFTeX
+  \pdfgentounicode=1
+\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt plus 2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt plus 3pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt plus 3pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in, itemsep=0pt, topsep=2pt, label=\textbullet]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt plus 6pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\Huge \scshape Asad Jaffery} \\ \vspace{1pt}
+  \small 425-786-7045 $|$ \href{mailto:asadmaffery@gmail.com}{\underline{asadmaffery@gmail.com}} $|$
+  \href{https://www.linkedin.com/in/asad-jaffery/}{\underline{linkedin.com/in/asad-jaffery}} $|$
+  \href{https://github.com/Asad-Jaffery}{\underline{github.com/Asad-Jaffery}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Washington}{Seattle, WA}
+      {B.S. Informatics, Concentration in Data Science $|$ GPA: 3.9/4.0}{June 2026}
+      \begin{itemize}[leftmargin=0.2in, itemsep=0pt, topsep=2pt, label={}]
+        \resumeItem{\textbf{Relevant Coursework:} Data Structures and Algorithms, Databases and Data Modeling, Advanced Data Science Methods, Database Systems, Intro to AI, Client-Side Development, Server-Side Development, Search and Recommender Systems}
+      \end{itemize}\vspace{-5pt plus 6pt}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Shopify}{Bellevue, WA}
+      {Software Engineer Intern -- Analytics Engineering}{January 2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{Cut \textbf{\raisebox{-0.25ex}{\textasciitilde}25\% (2 days)} of BigQuery slot time per rebuild off a company-wide GMV metric by consolidating pipeline logic into a centralized data model, achieving \textbf{99.99\%} reconciliation accuracy over \textbf{5.2 billion orders}}
+        \resumeItem{Implemented dbt versioning across \textbf{400+ data models}, introducing backwards compatibility for downstream consumers}
+        \resumeItem{Built \textbf{3 dbt pipelines} reconciling internal AI usage against vendor billing data, allowing us to \textbf{uncover a JSON parsing bug} that was undercounting company-wide AI spend by \textbf{\$800K/year}}
+        \resumeItem{Built a training pipeline for a BigQuery ML (ARIMA) anomaly-detection model, now alerting on unparseable UA strings before they corrupt order event attribution data}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Tesla}{Palo Alto, CA}
+      {Data Engineer Intern -- Energy, Residential Service Engineering}{June 2025 -- September 2025}
+      \resumeItemListStart
+        \resumeItem{Developed SQL pipelines to deploy \textbf{15 new autochecking workflows}, increasing Powerwall 3 automated failure reporting efforts by \textbf{16\%} and Powerwall 2 by \textbf{29\%}, exceeding the Q3 2025 goal}
+        \resumeItem{Uncovered and drove a critical investigation of a Powerwall 2 failure mode affecting \textbf{27\%} of returned units}
+        \resumeItem{Automated ticket closure for \textbf{6 Powerwall failure modes}, canceling field-service tickets when in-fleet units self-recovered and saving support contact-center teams \textbf{1,000+ hours} of manual investigation}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {USAFacts}{Bellevue, WA}
+      {Data Analyst Intern -- Product}{June 2024 -- September 2024}
+      \resumeItemListStart
+        \resumeItem{Designed, built, and deployed a custom barcode visualization template for organizational use with the Flourish SDK and D3.js}
+        \resumeItem{Increased user engagement \textbf{22\%} across \textbf{51 interactive product pages} by rewriting content, building cleaner data visualizations with Flourish and Python, and QA testing for page bugs}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Stock Informer} $|$ \emph{NVIDIA AI Agent Builder Hackathon}}{July 2025}
+      \resumeItemListStart
+        \resumeItem{Built and deployed an AI agent on NVIDIA Brev that creates market investment plans for users based on industry interest}
+        \resumeItem{Used LangChain to integrate a Llama 3.3 70B model for an LLM reasoning pipeline and SerpAPI for real-time market-data research}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Recognize} $|$ \emph{University of Washington Capstone Highlight}}{January 2025 -- June 2025}
+      \resumeItemListStart
+        \resumeItem{Led the end-to-end development of a company-sponsored capstone project, \textbf{highlighted by the University of Washington}}
+        \resumeItem{Built a Rails backend that feeds data into OpenAI's o4-mini model, generating insights that power 3 new consumer dashboard components}
+        \resumeItem{Simplified state management across 11 components by refactoring the frontend to leverage React.js's Context API}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Lynk} $|$ \emph{2025 WINFO Hackathon Winner}}{January 2025}
+      \resumeItemListStart
+        \resumeItem{Won \textbf{1st Place} in the ``Best Coding'' category by demoing the project to industry professionals in a competition against \textbf{250+ students}}
+        \resumeItem{Created a Flask- and React.js-based web app to connect local businesses with University of Washington students}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+   \small{\item{
+     \textbf{Languages:} Python, SQL, JavaScript, Java, HTML, CSS, Ruby, TypeScript \\
+     \textbf{Frameworks \& Libraries:} dbt, React.js, Node.js, Spark, Kafka, LangChain \\
+     \textbf{Tools:} AWS, GCS BigQuery, Git, GitHub, Apache Airflow, CI/CD \\
+     \textbf{Certifications:} AWS Cloud Practitioner, DubsTech Data Visualization Certification, 3x Annual UW Deans List
+   }}
+ \end{itemize}
+
+% Force the page break here so flexible glue stretches to the bottom margin
+% (without this, \end{document} adds infinite fill that eats the stretch)
+\pagebreak
+
+\end{document}
