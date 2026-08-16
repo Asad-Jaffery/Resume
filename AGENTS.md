@@ -1,10 +1,10 @@
 # Agent instructions
 
-This repo holds numbered resume variants in `resumes/`. Each `resume_N.tex` compiles to `resume_N.pdf`.
+This repo holds resume variants in `resumes/`. Each `.tex` file compiles to a matching `.pdf`.
 
 ## Apply changes to every resume
 
-Unless the user explicitly says a change is only for one version, apply the same edit to **all** `resumes/resume_*.tex` files.
+Unless the user explicitly says a change is only for one version, apply the same edit to **all** `resumes/*.tex` files.
 
 ## Do not open a PR
 
