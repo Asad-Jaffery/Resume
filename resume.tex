@@ -17,7 +17,10 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\input{glyphtounicode}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+\fi
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -34,22 +37,27 @@
 
 \urlstyle{same}
 \linespread{1.05}
-\raggedbottom
+% Stretch flexible glue so content fills the page exactly (no bottom whitespace)
+\flushbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+% Flexible space before/after section titles (stretches to fill the page)
+\titlespacing*{\section}{0pt}{2pt plus 14pt}{6pt plus 4pt}
 
 % Ensure that generated PDF is machine-readable / ATS-parsable
-\pdfgentounicode=1
+\ifPDFTeX
+  \pdfgentounicode=1
+\fi
 
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{{#1 \vspace{-2pt}}}
+  \item\small{{#1 \vspace{-2pt plus 2pt}}}
 }
 
 \newcommand{\resumeSubheading}[4]{
@@ -57,20 +65,20 @@
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-7pt plus 3pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
   \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-7pt plus 3pt}
 }
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in, itemsep=0pt, topsep=2pt]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt plus 6pt}}
 
 %-------------------------------------------
 \begin{document}
@@ -161,5 +169,9 @@
      \textbf{Certifications:} AWS Cloud Practitioner, DubsTech Data Visualization Certification, 3x Annual UW Deans List
    }}
  \end{itemize}
+
+% Force the page break here so flexible glue stretches to the bottom margin
+% (without this, \end{document} adds infinite fill that eats the stretch)
+\pagebreak
 
 \end{document}
