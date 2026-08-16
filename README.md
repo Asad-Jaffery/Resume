@@ -1,4 +1,4 @@
-Asad Jaffery's Resume 😄
+# Asad Jaffery's Resume 😄
 
 
 This is the public home for my resume. I keep the LaTeX source here and publish the compiled PDF from it.
