@@ -9,3 +9,7 @@ This is the public home for my resume. I keep the LaTeX source here and publish 
 - GitHub: [github.com/Asad-Jaffery](https://github.com/Asad-Jaffery)
 
 A GitHub Action rebuilds every `resumes/*.pdf` whenever a matching `.tex` file changes.
+
+## Tailored resumes
+
+- [Actively AI Data Engineer](resumes/asad_jaffery_resume_actively.pdf) ([LaTeX source](resumes/asad_jaffery_resume_actively.tex))
